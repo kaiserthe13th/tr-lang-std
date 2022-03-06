@@ -1,0 +1,81 @@
+işlev Sonuç
+    blok Sonuç
+        -> başarı
+        -> içerik
+    son
+    Sonuç ver
+son
+
+işlev LinkedList
+    blok _LinkedList
+        hiç, yanlış Sonuç -> önceki
+        hiç -> içerik
+        0 -> uzunluk
+    son
+    _LinkedList ver
+son
+
+işlev lklist-ekle -> a -> list
+    blok _LinkedList
+        list:uzunluk > 0 ise
+            list, doğru Sonuç
+        yoksa
+            hiç, yanlış Sonuç
+        son -> önceki
+        a -> içerik
+        list:uzunluk + 1 -> uzunluk
+    son
+    _LinkedList ver
+son
+
+işlev lklist-sil -> list
+    blok _LinkedList
+        list:önceki:içerik -> liste
+        list:içerik -> içerik
+    son
+    _LinkedList ver
+son
+
+işlev lklist-eriş -> index -> list
+    list:uzunluk > index ise
+        list:uzunluk -> cidx
+        list -> c
+        :. cidx > index iken
+            c:önceki:içerik -> c
+            cidx - 1 -> cidx 
+        son
+        c, doğru Sonuç ver
+    yoksa
+        hiç, yanlış Sonuç ver
+    son
+son
+
+işlev lklist-eriş-arkadan -> index -> list
+    list:uzunluk > index ise
+        list -> c
+        :. index > 0 iken
+            c:önceki:içerik -> c
+            index - 1 -> index
+        son
+        c, doğru Sonuç
+    yoksa
+        hiç, yanlış Sonuç
+    son ver
+son
+
+işlev lklist-yazı -> list
+    list:uzunluk > 0 ise
+        '[' -> ret
+        1 -> i
+        :. i < list:uzunluk iken
+            (list, i)lklist-eriş:içerik:içerik -> t
+            ret + t@yazı + ', ' -> ret
+            i + 1 -> i
+        son
+        ret + list:içerik@yazı + ']' -> ret
+    yoksa
+        '[]' -> ret
+    son
+    ret ver
+son
+
